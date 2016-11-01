@@ -5,6 +5,7 @@ chapter: 1
 ---
 
 # Lexical Syntax
+# 어휘 구문
 
 Scala programs are written using the Unicode Basic Multilingual Plane
 (_BMP_) character set; Unicode supplementary characters are not
@@ -13,6 +14,13 @@ lexical syntax, the Scala mode and the _XML mode_. If not
 otherwise mentioned, the following descriptions of Scala tokens refer
 to _Scala mode_, and literal characters ‘c’ refer to the ASCII fragment
 `\u0000` – `\u007F`.
+
+스칼라 프로그램은 유니코드 다국어문자판(_BMP_ Basic Multilingual Plane) 캐릭터셋을
+이용해 만들어 졌다; 유니코드 보충 문자들은 현재 지원되지 않는다. 이 장에서는 스칼라 어휘적
+구문의 두가지 모드를 정의한다. 하나는 스칼라 모드 이고 다른 하나는 _XML 모드_ 이다.
+만약 다른 언급이 없다면, 스칼라 토큰은 _스칼라 모드_ 를 가리킨다. 그리고 문자 ‘c’ 는
+아스키 조각 `\u0000` – `\u007F` (10진수, 0 ~ 127) 를 가리킨다
+
 
 In Scala mode, _Unicode escapes_ are replaced by the corresponding
 Unicode character with the given hexadecimal code.
