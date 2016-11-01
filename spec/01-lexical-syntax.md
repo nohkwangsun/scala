@@ -25,6 +25,10 @@ to _Scala mode_, and literal characters ‘c’ refer to the ASCII fragment
 In Scala mode, _Unicode escapes_ are replaced by the corresponding
 Unicode character with the given hexadecimal code.
 
+스칼라 모드에서 _유니코드 특수문자_ 는 주어진 16진수 코드에 대응하는 유니코드 문자들로 대체된다.
+
+
+
 ```ebnf
 UnicodeEscape ::= ‘\’ ‘u’ {‘u’} hexDigit hexDigit hexDigit hexDigit
 hexDigit      ::= ‘0’ | … | ‘9’ | ‘A’ | … | ‘F’ | ‘a’ | … | ‘f’
@@ -51,6 +55,19 @@ classes (Unicode general category given in parentheses):
 1. Operator characters. These consist of all printable ASCII characters
    `\u0020` - `\u007F` which are in none of the sets above, mathematical
    symbols (`Sm`) and other symbols (`So`).
+
+토큰들을 구성하기 위해, 문자들은 아래 기준들에 따라 구분된다.
+(괄호 안에 주어진 것은 유니코드 범용 카테고리이다.)
+
+1. 공백문자. `\u0020 | \u0009 | \u000D | \u000A`.
+1. 글자. 소문자 (`Ll`), 대문자 (`Lu`), 첫글자가 대문자인 타이틀 문자 (`Lt`), 그외 문자 (`Lo`),
+   숫자 (`Nl`) 그리고 대문자에 포함되는 두 개의 문자 `\u0024 ‘$’` and `\u005F ‘_’` 가
+   포함된 문자열을 의미한다.
+1. 숫자 `‘0’ | … | ‘9’`.
+1. 괄호 `‘(’ | ‘)’ | ‘[’ | ‘]’ | ‘{’ | ‘}’ `.
+1. 구분자 ``‘`’ | ‘'’ | ‘"’ | ‘.’ | ‘;’ | ‘,’ ``.
+1. 연산자. 이것은 출력 가능한 모든 아스키 문자들 `\u0020` - `\u007F` 로 구성된다.
+   이 문자들은 위 집합들에 포함되지 않으며, 수학적 기호 (`Sm`) 와 다른 기호 (`So`) 로 된다.
 
 ## Identifiers
 
